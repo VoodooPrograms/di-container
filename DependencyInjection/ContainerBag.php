@@ -5,7 +5,7 @@ namespace DI\DependencyInjection;
 
 
 
-class ContainerBag extends Container implements \ArrayAccess
+class ContainerBag extends Container implements \ArrayAccess, \Countable
 {
 
     /**
@@ -14,7 +14,7 @@ class ContainerBag extends Container implements \ArrayAccess
      * @param mixed $offset <p>
      * An offset to check for.
      * </p>
-     * @return boolean true on success or false on failure.
+     * @return void true on success or false on failure.
      * </p>
      * <p>
      * The return value will be casted to boolean if non-boolean was returned.
@@ -32,6 +32,8 @@ class ContainerBag extends Container implements \ArrayAccess
      * The offset to retrieve.
      * </p>
      * @return mixed Can return all value types.
+     * @throws Exceptions\DependencyIsNotInstantiableException
+     * @throws Exceptions\DependencyNotRegisteredException
      * @since 5.0.0
      */
     public function offsetGet($offset)
@@ -73,5 +75,19 @@ class ContainerBag extends Container implements \ArrayAccess
     public function offsetUnset($offset)
     {
         $this->unset($offset);
+    }
+
+    /**
+     * Count elements of an object
+     * @link https://php.net/manual/en/countable.count.php
+     * @return int The custom count as an integer.
+     * </p>
+     * <p>
+     * The return value is cast to an integer.
+     * @since 5.1.0
+     */
+    public function count()
+    {
+        return count($this->services);
     }
 }

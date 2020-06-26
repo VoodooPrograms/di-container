@@ -75,6 +75,13 @@ class Container implements ContainerInterface
         unset($this->services[$entry]);
     }
 
+    /**
+     * @param string $entry
+     * @return object
+     * @throws DependencyClassDoesNotExistException
+     * @throws DependencyHasNoDefaultValueException
+     * @throws DependencyIsNotInstantiableException
+     */
     public function specifies(string $entry){
         $resolved = [];
         $reflection = $this->getReflection($entry);
@@ -140,7 +147,7 @@ class Container implements ContainerInterface
             return false;
         }
         $class = $parameter->getClass();
-        $isUserDefined = $class->isUserDefined();
+        $isUserDefined = $class->isUserDefined(); //isInternal()
         return $isUserDefined;
     }
 }

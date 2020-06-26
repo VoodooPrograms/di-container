@@ -1,5 +1,15 @@
 {
     "require": {
-        "psr/container": "^1.0"
+        "psr/container": "^1.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "config": {
+        "vendor-dir": "Ourframework/vendor"
+    },
+    "autoload": {
+        "psr-4": {
+            "DI\\DependencyInjection\\": "DependencyInjection/",
+            "Tests\\": "Tests/"
+        }
     }
 }

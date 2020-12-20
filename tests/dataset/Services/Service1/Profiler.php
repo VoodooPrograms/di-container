@@ -1,7 +1,7 @@
 <?php
 
 
-namespace DI\Services;
+namespace Services\Service1;
 
 
 class Profiler implements IProfiler

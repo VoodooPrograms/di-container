@@ -1,7 +1,8 @@
 <?php
 
 
-namespace Tests;
+namespace Tests\Unit;
+
 
 
 use DI\DependencyInjection\Container;

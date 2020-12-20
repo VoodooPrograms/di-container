@@ -39,6 +39,7 @@ class Container implements ContainerInterface
         }
 
         $service = $this->services[$entry];
+        if (is_callable($service)) return $service;
         return $this->specifies($service);
     }
 

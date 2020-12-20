@@ -1,13 +1,13 @@
 <?php
 
 
-namespace DI\Services;
+namespace Services\Service1;
 
 
 class ProfilerDependencyC
 {
     public function __construct(ProfilerDependencyA $a)
     {
-        $this->a = $a;
+
     }
 }

@@ -1,15 +1,22 @@
+
 {
+    "name": "Quetzal/DI",
+    "description": "Dependency Injection containers for Quetzal framework",
+    "authors": [
+        {
+            "name": "VoodooPrograms"
+        }
+    ],
     "require": {
+        "php": ">=7.3.0",
         "psr/container": "^1.0",
         "phpunit/phpunit": "^9.0"
     },
-    "config": {
-        "vendor-dir": "Ourframework/vendor"
-    },
     "autoload": {
         "psr-4": {
-            "DI\\DependencyInjection\\": "DependencyInjection/",
-            "Tests\\": "Tests/"
+            "DI\\DependencyInjection\\": "src/",
+            "Services\\": "tests/dataset/Services/",
+            "Tests\\": "tests/"
         }
     }
 }

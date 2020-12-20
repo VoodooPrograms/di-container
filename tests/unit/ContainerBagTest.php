@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Tests;
+namespace Tests\Unit;
 
 
 use DI\DependencyInjection\ContainerBag;
@@ -16,4 +16,7 @@ class ContainerBagTest extends TestCase
         $this->containerBag = new ContainerBag();
     }
 
+    public function testSet(){
+        $this->assertNotNull($this->containerBag[\stdClass::class] = new \stdClass());
+    }
 }

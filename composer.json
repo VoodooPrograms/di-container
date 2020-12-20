@@ -1,6 +1,6 @@
 
 {
-    "name": "Quetzal/DI",
+    "name": "quetzal/dependency-injection",
     "description": "Dependency Injection containers for Quetzal framework",
     "authors": [
         {
